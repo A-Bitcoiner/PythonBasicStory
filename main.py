@@ -55,7 +55,7 @@ while True:
              print("There is a cave wall to the east, you cannot go further east.")
          elif location == "forest":
             if not has_rope:
-                print("You try to cross the abyss, but you fall to your death. Game over!")
+                print("You try to cross the abyss, but you fall to your death. You should've used a rope to cross the Abyss. Game over!")
                 break
             else:
                 in_town = True
