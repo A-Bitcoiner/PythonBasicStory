@@ -44,7 +44,7 @@ while True:
             print("You move towards the light and find yourself in a beautiful forest.")
             in_forest = True
         elif location == "town":
-            print("You enter the shop. A trader named Zach greets you.")
+            print("You enter the shop. A trader named Zach greets you. He murmurs about leverage trading as you browse the shop")
             in_town = False
             in_shop = True
         else:
