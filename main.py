@@ -47,6 +47,11 @@ while True:
             print("You enter the shop. A trader named Zach greets you. He murmurs about leverage trading as you browse the shop")
             in_town = False
             in_shop = True
+        elif location == "shop":
+            print("You cannot go north in the shop, that would lead you behind the shops counter, and trader Zach would be upset.")
+        elif location == "forest":
+            print(
+                "There is no path north of the forest, you cannot continue north.")
         else:
             print("You are already out of the cave.")
     # Check if the player wants to go east
@@ -72,9 +77,10 @@ while True:
             print("You exit the shop. Zach waves you goodbye as he begins another 100x leveraged trade.")
             in_shop = False
             in_town = True
-        else:
+        elif location == "forest":
             in_cave = True
-            print("You return to the cave.")
+            in_forest = False
+            print("You walk through the forest and return to the cave.")
     # Check if the player wants to get the rope
     elif action == "get rope" or action == "pick up rope":
         if location == "cave":
@@ -86,11 +92,14 @@ while True:
     elif action == "go west":
         if location == "town":
             in_town = False
+            in_forest = True
             print("You leave the town and return to the forest.")
         elif location == "forest":
-            print("You are already in the forest.")
+            print("To the west there is no path, just a dense forest. You cannot go farther.")
         elif location == "cave":
             print("There is a cave wall west, you cannot go further.")
+        elif location == "shop":
+            print("There is the shops wall to the west, you cannot go further.")
     # Check if the player wants to quit
     elif action == "quit":
         print("Thanks for playing!")
