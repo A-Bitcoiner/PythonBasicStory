@@ -5,6 +5,7 @@ in_town = False
 in_shop = False
 in_forest = False
 has_quest = False
+has_chest = False
 
 # Define the main game loop
 while True:
@@ -86,9 +87,18 @@ while True:
     elif action == "retrieve quest" or action == "get quest" or action == "talk to zach" or action == "talk to Zach":
         if location == "shop":
             has_quest = True
-            print("Zach the trader gives you a quest. You must do a quest that I'll explain later.")
+            print("Zach the trader gives you a quest. You must dig for buried treasure in the forest at this location marked on this map. *Hands map to player*")
         else:
             print("There is no one around to retrieve a quest from.")
+    # Check if the player wants to dig in forest for quest
+    elif action == "dig for quest" or action == "dig" or action == "dig here":
+        if location == "forest" and has_quest == True:
+            print("You dig at the location marked on the map, and find a buried chest!")
+            has_chest = True
+        elif location == "forest" and has_quest == False:
+            print("Why would you try digging in the forest? Not like you were given a quest to do so.. yet..")
+        else:
+            print("You can't dig here silly goose.")
     # Check if the player wants to get the rope
     elif action == "get rope" or action == "pick up rope":
         if location == "cave":
