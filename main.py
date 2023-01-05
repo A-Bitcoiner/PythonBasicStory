@@ -4,6 +4,7 @@ has_rope = False
 in_town = False
 in_shop = False
 in_forest = False
+has_quest = False
 
 # Define the main game loop
 while True:
@@ -81,6 +82,13 @@ while True:
             in_cave = True
             in_forest = False
             print("You walk through the forest and return to the cave.")
+    # Check if the player wants to retrieve quest
+    elif action == "retrieve quest" or action == "get quest" or action == "talk to zach" or action == "talk to Zach":
+        if location == "shop":
+            has_quest = True
+            print("Zach the trader gives you a quest. You must do a quest that I'll explain later.")
+        else:
+            print("There is no one around to retrieve a quest from.")
     # Check if the player wants to get the rope
     elif action == "get rope" or action == "pick up rope":
         if location == "cave":
