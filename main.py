@@ -6,6 +6,7 @@ in_shop = False
 in_forest = False
 has_quest = False
 has_chest = False
+has_pickaxe = False
 
 # Define the main game loop
 while True:
@@ -102,9 +103,10 @@ while True:
     # Check if the player wants to turn in the quest
     elif action == "turn in quest" or action == "complete quest" or action == "give chest to Zach" or action == "give chest to zach":
         if location == "shop" and has_chest and has_quest:
-            print("You hand the chest to Zach and he pays you a reward. Quest complete!")
+            print("You hand the chest to Zach and he gives you a pickaxe as a reward. He mentions it might be useful to dig around in the cave. Quest complete!")
             has_chest = False
             has_quest = False
+            has_pickaxe = True
         elif not has_chest:
             print("You don't have the chest to turn in.")
         elif not has_quest:
