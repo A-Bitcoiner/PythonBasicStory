@@ -99,6 +99,18 @@ while True:
             print("Why would you try digging in the forest? Not like you were given a quest to do so.. yet..")
         else:
             print("You can't dig here silly goose.")
+    # Check if the player wants to turn in the quest
+    elif action == "turn in quest" or action == "complete quest" or action == "give chest to Zach" or action == "give chest to zach":
+        if location == "shop" and has_chest and has_quest:
+            print("You hand the chest to Zach and he pays you a reward. Quest complete!")
+            has_chest = False
+            has_quest = False
+        elif not has_chest:
+            print("You don't have the chest to turn in.")
+        elif not has_quest:
+            print("You don't have a quest to turn in.")
+        else:
+            print("You are not in the shop and cannot turn in the quest.")
     # Check if the player wants to get the rope
     elif action == "get rope" or action == "pick up rope":
         if location == "cave":
