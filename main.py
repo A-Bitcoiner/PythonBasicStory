@@ -98,6 +98,8 @@ while True:
             has_chest = True
         elif location == "forest" and has_quest == False:
             print("Why would you try digging in the forest? Not like you were given a quest to do so.. yet..")
+        elif location == "cave" and has_pickaxe == True:
+            print("You use the pickaxe to dig into the rough stone within the cave. After hours of doing this, you eventually break into a tunnel")
         else:
             print("You can't dig here silly goose.")
     # Check if the player wants to turn in the quest
