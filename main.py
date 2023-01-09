@@ -21,7 +21,8 @@ while True:
         location = "forest"
 
     print(f"You are in a {location}.")
-
+    
+    #check if player has rope
     if location == "cave":
         if not has_rope:
 
@@ -62,6 +63,7 @@ while True:
          if location == "cave":
              print("There is a cave wall to the east, you cannot go further east.")
          elif location == "forest":
+            #have player use rope to go east
             if not has_rope:
                 print("You try to cross the abyss, but you fall to your death. You should've used a rope to cross the Abyss. Game over!")
                 break
@@ -98,6 +100,7 @@ while True:
             has_chest = True
         elif location == "forest" and has_quest == False:
             print("Why would you try digging in the forest? Not like you were given a quest to do so.. yet..")
+            #add tunnel discovery code here
         elif location == "cave" and has_pickaxe == True:
             print("You use the pickaxe to dig into the rough stone within the cave. After hours of doing this, you eventually break into a tunnel")
         else:
